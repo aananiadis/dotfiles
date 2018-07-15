@@ -28,6 +28,7 @@ set directory=""
 set ru
 
 " Fixing tabs
+filetype plugin indent on
 set tabstop=4
 set expandtab
 set shiftwidth=4
@@ -63,6 +64,9 @@ set scrolloff=2
 
 " Tool to use for Grepper
 set grepprg="git"
+
+" Use mouse
+set mouse=a
 
 "" ============================================================================
 ""                                Appearances

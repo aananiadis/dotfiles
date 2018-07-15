@@ -1,8 +1,13 @@
 - defaults:
     link:
-      relink:  true
+      relink: true
+      create: true
 
-- clean: ['~']
+- clean: ['~', '~/.oh-my-zsh/custom/']
+
+- shell:
+    - [sh prereqs.sh, Running prerequisite install script]
+    - [mkdir -p ~/.oh-my-zsh/custom/themes, Creating oh-my-zsh custom theme folders]
 
 - link:
     ~/.bashrc: bashrc
@@ -13,6 +18,7 @@
     ~/.tmux/plugins/tpm/tpm:
       create: true
       path: tpm
+    ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme: oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
