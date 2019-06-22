@@ -112,5 +112,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias l='ls -l'
-alias la='ls -la'
+alias l='ls -lh'
+alias la='ls -lah'

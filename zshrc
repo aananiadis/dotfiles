@@ -49,7 +49,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -75,6 +75,10 @@ plugins=(
   git
   tmux
 )
+
+# =======================================================
+#    ohmyzsh
+# =======================================================
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,3 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# =======================================================
+#    settings
+# =======================================================
+source ~/.dotfiles/zsh/alias.sh
