@@ -49,7 +49,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -73,7 +73,6 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  tmux
 )
 
 # =======================================================
@@ -115,3 +114,12 @@ source $ZSH/oh-my-zsh.sh
 #    settings
 # =======================================================
 source ~/.dotfiles/zsh/alias.sh
+
+stty -ixon -ixoff
+
+export PATH="/home/alexander/.pyenv/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
