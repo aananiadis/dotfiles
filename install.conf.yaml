@@ -11,16 +11,16 @@
 
 - link:
     ~/.bashrc: bashrc
-    ~/.zshrc:
-      force: true
-      path: zshrc
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.tmux.conf: tmux.conf
     ~/.tmux/plugins/tpm:
       create: true
       path: tpm
-    ~/.oh-my-zsh/custom/themes/powerlevel9k.zsh-theme: oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+    ~/.zshrc:
+      force: true
+      path: zshrc
+    ~/.p10k.zsh: zsh/p10k.zsh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
