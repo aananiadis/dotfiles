@@ -4,3 +4,7 @@
 [submodule "tpm"]
 	path = tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "zsh/p10k"]
+	path = zsh/p10k
+	url = https://github.com/romkatv/powerlevel10k.git
+	shallow = true
