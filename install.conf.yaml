@@ -2,17 +2,27 @@
     link:
       relink: true
       create: true
+    shell:
+      stdout: true
+      stderr: true
+      quiet: true
 
 - clean: ['~', '~/.oh-my-zsh/custom/']
 
 - shell:
-    -
+    - description: Running prerequisite install script
       command: sh prereqs.sh
-      description: Running prerequisite install script
-      stdout: true
-      stderr: true
 
-    - [chsh -s $(which zsh), Making zsh the default shell]
+    - description: Checking for existing bashrc
+      command:
+        'if [ -f ~/.bashrc ]; then
+         mv ~/.bashrc ~/.bashrc_backup;
+         echo "Found existing bashrc file, moved to ~/.bashrc_backup";
+         fi'
+
+    - description: Making zsh the default shell
+      command: chsh -s $(which zsh)
+      stdin: true
 
 
 - link:
