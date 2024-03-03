@@ -13,20 +13,20 @@
     - description: Running prerequisite install script
       command: sh prereqs.sh
 
-    - description: Checking for existing bashrc
-      command:
-        'if [ -f ~/.bashrc ]; then
-         mv ~/.bashrc ~/.bashrc_backup;
-         echo "Found existing bashrc file, moved to ~/.bashrc_backup";
-         fi'
+    # - description: Checking for existing bashrc
+    #   command:
+    #     'if [ -f ~/.bashrc ]; then
+    #      mv ~/.bashrc ~/.bashrc_backup;
+    #      echo "Found existing bashrc file, moved to ~/.bashrc_backup";
+    #      fi'
 
-    - description: Making zsh the default shell
-      command: chsh -s $(which zsh)
-      stdin: true
+    # - description: Making zsh the default shell
+    #   command: chsh -s $(which zsh)
+    #   stdin: true
 
 
 - link:
-    ~/.bashrc: bashrc
+    # ~/.bashrc: bashrc
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.tmux.conf: tmux.conf
