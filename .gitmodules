@@ -8,3 +8,6 @@
 	path = zsh/p10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	shallow = true
+[submodule "dotbot-if"]
+	path = dotbot-plugins/dotbot-if
+	url = https://github.com/wonderbeyond/dotbot-if.git
