@@ -13,6 +13,9 @@
     - description: Running prerequisite install script
       command: sh prereqs.sh
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
     # - description: Checking for existing bashrc
     #   command:
     #     'if [ -f ~/.bashrc ]; then
@@ -29,6 +32,9 @@
     # ~/.bashrc: bashrc
     ~/.vim: vim
     ~/.vimrc: vimrc
+    ~/.gitconfig:
+      if: '[[ $(grep -i Microsoft /proc/version) ]]'
+      path: git/.gitconfig.wsl
     ~/.tmux.conf: tmux.conf
     ~/.tmux/plugins/tpm:
       create: true
@@ -40,6 +46,3 @@
     ~/.oh-my-zsh/custom/themes/powerlevel10k:
       create: true
       path: zsh/p10k
-
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]

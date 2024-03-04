@@ -1,0 +1,4 @@
+## Usage
+1. Clone to `~/.dotfiles`
+1. (optional) Update with `git submodule update --remote dotbot`
+1. `./install`

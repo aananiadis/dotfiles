@@ -1,0 +1,16 @@
+[user]
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBShoH5Ow/CRnjVx7M5/S7R6lBLp+j6vYENcQcTEbYqB
+  name = Alexander Ananiadis
+  email = agananiadis@gmail.com
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+  program = "/mnt/c/Users/Alexander/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+
+[commit]
+  gpgsign = true
+
+[core]
+	sshCommand = ssh.exe
