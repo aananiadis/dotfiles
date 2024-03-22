@@ -116,7 +116,6 @@ export EDITOR='vim'
 # =======================================================
 #    settings
 # =======================================================
-source ~/.dotfiles/zsh/alias.sh
 
 export KEYTIMEOUT=1
 # fuzzy history search
@@ -141,10 +140,13 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# aliases
+source ~/.dotfiles/zsh/alias.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+# Work specific conf
 [[ ! -f ~/.dd.zshrc ]] || source ~/.dd.zshrc
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# wsl only
+[[ ! $(grep -i microsoft /proc/version) ]] || source ~/.dotfiles/zsh/wsl.sh
+

@@ -33,7 +33,7 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.gitconfig:
-      if: '[[ $(grep -i Microsoft /proc/version) ]]'
+      if: '[[ $(grep -i microsoft /proc/version) ]]'
       path: git/.gitconfig.wsl
     ~/.tmux.conf: tmux.conf
     ~/.tmux/plugins/tpm:
