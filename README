@@ -1,5 +1,6 @@
 ## Usage
 1. Clone to `~/.dotfiles`
-1. (optional) Update with `git submodule update --remote dotbot`
-    * Update all with `git submodule update --remote --recursive`
 1. `./install`
+
+### To update submodules to latest
+`git submodule update --remote`
