@@ -143,10 +143,11 @@ fi
 # aliases
 source ~/.dotfiles/zsh/alias.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/zsh/p10k.zsh.
+[[ ! -f ~/.dotfiles/zsh/p10k.zsh ]] || source ~/.dotfiles/zsh/p10k.zsh
 # Work specific conf
 [[ ! -f ~/.dd.zshrc ]] || source ~/.dd.zshrc
 # wsl only
-[[ ! $(grep -i microsoft /proc/version) ]] || source ~/.dotfiles/zsh/wsl.sh
+[[ ! $(grep -i microsoft /proc/version 2>/dev/null) ]] || source ~/.dotfiles/zsh/wsl.sh
+
 
