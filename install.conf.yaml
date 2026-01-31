@@ -9,9 +9,24 @@
 
 - clean: ['~', '~/.oh-my-zsh/custom/']
 
+# - shell:
+#     - description: Running prerequisite install script
+#       command: sh prereqs.sh
+
 - shell:
-    - description: Running prerequisite install script
-      command: sh prereqs.sh
+    - description: Make fish the default shell (only if not default)
+      command: |
+        if command -v fish > /dev/null 2>&1; then
+          fish_path="$(command -v fish)"
+          current_shell="$SHELL"
+          if [ "$current_shell" != "$fish_path" ]; then
+            if ! grep -qxF "$fish_path" /etc/shells; then
+              echo "$fish_path" | sudo tee -a /etc/shells > /dev/null
+            fi
+            chsh -s "$fish_path"
+          fi
+        fi
+      stdin: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
@@ -39,9 +54,18 @@
     ~/.tmux/plugins/tpm:
       create: true
       path: tpm
-    ~/.zshrc:
-      force: true
-      path: zshrc
-    ~/.oh-my-zsh/custom/themes/powerlevel10k:
+    # ~/.zshrc:
+    #   force: true
+    #   path: zshrc
+    # ~/.oh-my-zsh/custom/themes/powerlevel10k:
+    #   create: true
+    #   path: zsh/p10k
+    ~/.config/starship.toml:
+      path: shell/starship.toml
+    ~/.config/fish/config.fish:
       create: true
-      path: zsh/p10k
+      force: true
+      path: shell/config.fish
+    ~/.config/fish/conf.d/abbr.fish:
+      create: true
+      path: shell/abbr.fish
