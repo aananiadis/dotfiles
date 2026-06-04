@@ -22,3 +22,9 @@ fish_add_path ~/.local/bin
 # Starship
 starship init fish | source
 enable_transience
+
+# Re-run work overrides after the normal config when present.
+set -l dd_config ~/.config/fish/conf.d/dd.fish
+if test -f $dd_config
+    source $dd_config
+end

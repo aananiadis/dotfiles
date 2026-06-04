@@ -5,6 +5,7 @@
 add_newline = false
 right_format = """$time"""
 continuation_prompt = '▶▶ '
+command_timeout = 2000
 
 
 # ~/.config/starship.toml
@@ -72,7 +73,7 @@ symbol = " "
 symbol = " "
 
 [gcloud]
-symbol = " "
+disabled = true
 
 [git_branch]
 symbol = " "
